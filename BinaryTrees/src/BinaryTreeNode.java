@@ -15,13 +15,13 @@ class BinaryTreeNode<A>{
         this.right = right;
     }
 
-    public A getData(A data){
+    public A getData(){
         return data;
     }
-    public BinaryTreeNode<A> getLeft(BinaryTreeNode<A> left){
+    public BinaryTreeNode<A> getLeft(){
         return left;
     }
-    public BinaryTreeNode<A> getRight(BinaryTreeNode<A> right){
+    public BinaryTreeNode<A> getRight(){
         return right;
     }
 
