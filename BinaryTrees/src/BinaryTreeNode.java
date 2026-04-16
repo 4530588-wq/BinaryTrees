@@ -1,7 +1,7 @@
 class BinaryTreeNode<A>{
-    A data;
-    BinaryTreeNode<A> left;
-    BinaryTreeNode<A> right;
+   private A data;
+    private BinaryTreeNode<A> left;
+    private BinaryTreeNode<A> right;
 
     public BinaryTreeNode(){
         this.data = null;

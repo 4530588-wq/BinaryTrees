@@ -1,5 +1,5 @@
 public class BinaryTree<A> {
-    BinaryTreeNode<A> root;
+    private BinaryTreeNode<A> root;
 
     public BinaryTree(){
         this.root = root;
