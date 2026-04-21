@@ -1,30 +1,28 @@
 public class BinaryTree<B> {
-    BinaryTreeNode<B> root;
+    private BinaryTreeNode<B> root;
 
-    public BinaryTree(){
+    public BinaryTree() {
         this.root = null;
     }
-    public BinaryTree(BinaryTreeNode<B> root){
+
+    public BinaryTree(BinaryTreeNode<B> root) {
         this.root = root;
     }
 
-    public BinaryTreeNode<B> getRoot(){
+    public BinaryTreeNode<B> getRoot() {
         return root;
     }
-    public void setRoot(BinaryTreeNode<B> root){
+
+    public void setRoot(BinaryTreeNode<B> root) {
         this.root = root;
     }
 
-    public int getHeight(BinaryTreeNode<B> node){
-        if(node == null) return 0;
+    public int getHeight(BinaryTreeNode<B> node) {
+        if (node == null) return 0;
 
         int leftHeight = getHeight(node.getLeft());
         int rightHeight = getHeight(node.getRight());
 
-        return Math.max(leftHeight,rightHeight) +1;
-    }
-
-    public int countLevel(BinaryTreeNode<Integer> node, int level){
-        
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 }
