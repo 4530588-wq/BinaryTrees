@@ -33,6 +33,16 @@ public class Main {
 
         BinaryTree<Integer> tree2 = new BinaryTree<>(a1);
 
-        
+        System.out.println("Tree 1 In-order transversal : " );
+        tree1.inOrder(tree1.getRoot());
+        System.out.println(" ");
+        System.out.println("Tree 1 Leaves : "+ tree1.countLeaves(tree1.getRoot()));
+        System.out.println("Tree 1 height : "+tree1.height(tree1.getRoot()));
+        System.out.println(" ");
+        System.out.println("Tree 2 In-order transversal : " );
+        tree2.inOrder(tree2.getRoot());
+        System.out.println(" ");
+        System.out.println("Tree 2 Leaves : "+ tree2.countLeaves(tree2.getRoot()));
+        System.out.println("Tree 2 height : "+tree2.height(tree2.getRoot()));
     }
 }

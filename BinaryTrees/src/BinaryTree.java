@@ -2,6 +2,9 @@ public class BinaryTree<A> {
     private BinaryTreeNode<A> root;
 
     public BinaryTree(){
+        this.root = null;
+    }
+    public BinaryTree(BinaryTreeNode<A> root){
         this.root = root;
     }
 
