@@ -1,14 +1,14 @@
-class BinaryTreeNode<B>{
+class BinaryTreeeNode<B>{
    private B data;
-   private BinaryTreeNode<B> left;
-   private BinaryTreeNode<B> right;
+   private BinaryTreeeNode<B> left;
+   private BinaryTreeeNode<B> right;
 
-   public BinaryTreeNode(){
+   public BinaryTreeeNode(){
        this.data = null;
        this.left = null;
        this.right = null;
    }
-   public BinaryTreeNode(B data,BinaryTreeNode<B> left,BinaryTreeNode<B> right){
+   public BinaryTreeeNode(B data,BinaryTreeeNode<B> left,BinaryTreeeNode<B> right){
        this.data = data;
        this.left = left;
        this.right = right;
@@ -17,20 +17,20 @@ class BinaryTreeNode<B>{
    public B getData(){
        return data;
    }
-   public BinaryTreeNode<B> getLeft(){
+   public BinaryTreeeNode<B> getLeft(){
        return left;
    }
-   public BinaryTreeNode<B> getRight(){
+   public BinaryTreeeNode<B> getRight(){
        return right;
    }
 
    public void setData(B data){
        this.data = data;
    }
-   public void setLeft(BinaryTreeNode<B> left){
+   public void setLeft(BinaryTreeeNode<B> left){
        this.left = left;
    }
-   public void setRight(BinaryTreeNode<B> right){
+   public void setRight(BinaryTreeeNode<B> right){
        this.right = right;
    }
 
