@@ -28,6 +28,6 @@ public class Main {
 
         BT<Integer> tree1 = new BT<>(n1);
 
-        System.out.println("Output :"+ tree1.search(tree1,21));
+        System.out.println("Output : "+ tree1.search(tree1.root,77));
     }
 }
