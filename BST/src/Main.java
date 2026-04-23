@@ -26,7 +26,7 @@ public class Main {
         n8.setRight(n11);
         n11.setRight(n12);
 
-        BT<Integer> tree1 = new BT<>(n1,21);
+        BT<Integer> tree1 = new BT<>(n1);
 
         System.out.println("Output :"+ tree1.search(tree1,21));
     }

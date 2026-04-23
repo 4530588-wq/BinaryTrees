@@ -1,24 +1,27 @@
 public class BT<A extends Comparable<A>> {
     Node<A> root;
-    int value;
+    A value;
 
     public BT(){
         this.root = null;
-        this.value = 0;
+        this.value = null;
     }
 
-    public BT(Node<A> root,int value){
+    public BT(Node<A> root){
         this.root = root;
-        this.value = value;
     }
 
-    public boolean search(Node<A> root, int value){
+    public boolean search(Node<Integer> root, Integer value){
         if(root == null) return false;
 
-        else if(value > root.getData())
+        else if(value.compareTo(root.getData()) < 0)
             return search(root.getLeft(),value);
 
-        else return search(root.getRight(),value);
+        else if(value.compareTo(root.getData()) > 0)
+            return search(root.getRight(),value);
+
+        else return true;
     }
+
 
 }
