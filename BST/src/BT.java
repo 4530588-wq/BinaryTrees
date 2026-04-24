@@ -1,6 +1,6 @@
 public class BT<A extends Comparable<A>> {
     Node<A> root;
-    A value;
+     A value;
 
     public BT(){
         this.root = null;
@@ -11,17 +11,30 @@ public class BT<A extends Comparable<A>> {
         this.root = root;
     }
 
-    public boolean search(Node<A> root, A value){
-        if(root == null) return false;
+    public boolean search(Node<A> node, A value){
+        if(node == null) return false;
 
-        else if(value.compareTo(root.getData()) < 0)
-            return search(root.getLeft(),value);
+        else if(value.compareTo(node.getData()) < 0)
+            return search(node.getLeft(),value);
 
-        else if(value.compareTo(root.getData()) > 0)
-            return search(root.getRight(),value);
+        else if(value.compareTo(node.getData()) > 0)
+            return search(node.getRight(),value);
 
         else return true;
     }
 
+    public Node<A> insert(Node<A> node,A value){
+        if(node == null)
+            return new Node<>(value,null,null);
+
+        else if(value == node.getData())
+            return node;
+
+        else if(value.compareTo(node.getData()) < 0)
+            node.setLeft(insert(node.getLeft(),value));
+
+        else node.setRight(insert(node.getRight(),value));
+        return node;
+    }
 
 }

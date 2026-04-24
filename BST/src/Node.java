@@ -34,4 +34,9 @@ class Node<A>{
         this.right = right;
     }
 
+    @Override
+    public String toString() {
+        return String.valueOf(data);
+    }
+
 }
