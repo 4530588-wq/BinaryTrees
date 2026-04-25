@@ -37,4 +37,26 @@ public class BT<A extends Comparable<A>> {
         return node;
     }
 
+    public void duplicates(Node<A> node,A data){
+        if(data.compareTo(node.getData()) == 0) System.out.println("Duplicate detected");
+    }
+
+    private Node<A> findMin(Node<A> node){
+        while(node.getLeft() != null) node = node.getLeft();
+        return node;
+    }
+    private Node<A> deleteData(Node<A> node, A data){
+        if(node == null) return null;
+        else if(data.compareTo(node.getData()) >0) node.setRight(deleteData(node.getRight(),data));
+        else if(data.compareTo(node.getData()) <0) node.setLeft(deleteData(node.getLeft(),data));
+        else{
+            if(node.getLeft() == null && node.getRight() == null) return null;
+            else if(node.getLeft() == null) return node.getRight();
+            else if(node.getRight() == null) return node.getLeft();
+            Node<A> victimNode = findMin(node.getRight());
+            node.setData(victimNode.getData());
+            node.setRight(deleteData(node.getRight(),victimNode.getData()));
+        }
+    }
+
 }
