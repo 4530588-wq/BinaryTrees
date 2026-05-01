@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 public class BT<A extends Comparable<A>> {
     Node<A> root;
      A value;
@@ -27,18 +29,12 @@ public class BT<A extends Comparable<A>> {
         if(node == null)
             return new Node<>(value,null,null);
 
-        else if(value == node.getData())
-            return node;
-
-        else if(value.compareTo(node.getData()) < 0)
-            node.setLeft(insert(node.getLeft(),value));
-
-        else node.setRight(insert(node.getRight(),value));
+        int cmp = value.compareTo(node.getData());
+        if(cmp == 0){ System.out.println("Duplicate detected "+value);
+    return node;}
+        else if(cmp < 0) {node.setLeft(insert(node.getLeft(),value));}
+        else {node.setRight(insert(node.getRight(),value));}
         return node;
-    }
-
-    public void duplicates(Node<A> node,A data){
-        if(data.compareTo(node.getData()) == 0) System.out.println("Duplicate detected");
     }
 
     private Node<A> findMin(Node<A> node){
@@ -57,6 +53,18 @@ public class BT<A extends Comparable<A>> {
             node.setData(victimNode.getData());
             node.setRight(deleteData(node.getRight(),victimNode.getData()));
         }
+        return node;
+    }
+    public void delete(A data){
+        root = deleteData(root, data);
+    }
+    public void inOrder(Node<A> node){
+        if(node != null){
+            inOrder(node.getLeft());
+            System.out.print(" "+node.getData());
+            inOrder(node.getRight());
+        }
+
     }
 
 }

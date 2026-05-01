@@ -28,9 +28,9 @@ public class Main {
 
         BT<Integer> tree1 = new BT<>(n1);
         int elementSearch = 77;
-        int elementInsert = 100;
+        int elementInsert = 21;
         System.out.println("Element "+elementSearch+" exists in the tree : "+ tree1.search(tree1.root,elementSearch));
         System.out.println("Inserting element "+elementInsert+" in the tree : "+tree1.insert(tree1.root,elementInsert));
-
+        tree1.inOrder(tree1.root);
     }
 }
